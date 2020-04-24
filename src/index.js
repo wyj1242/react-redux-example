@@ -2,7 +2,7 @@ import React from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
-import todoApp from './reducers'
+import todoApp from './redux/reducers'
 import App from './components/App'
 import * as serviceWorker from './serviceWorker'
 
@@ -10,7 +10,7 @@ const store = createStore(todoApp)
 
 render(
     <Provider store={store}>
-        <App />
+        <App store={store} />
     </Provider>,
     document.getElementById('root')
 )
